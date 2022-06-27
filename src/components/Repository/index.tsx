@@ -19,7 +19,7 @@ function Repository(props: IRepositoryProps) {
         <strong>{props.repository.name}</strong>
         <p>{props.repository.description}</p>
         <a href={props.repository.html_url}>acessar repositório</a>
-        <button onClick={()=> setFavorite(true)} >Favoritar</button>
+        <button onClick={!favorite? ()=> setFavorite(true): ()=> setFavorite(false)} >{!favorite? "Favoritar" : "Desfavoritar"}</button>
         {favorite? <span>FAVORITO</span>: null}
       </li>
     )
